@@ -6,7 +6,7 @@ The base image is webdevops/php-apache:5.6
 
 ## Usage
 
-```docker run donvito/php-oci8 php -m```
+```docker run kanti/docker-php-oci8 php -m```
 
 It will list all php module, including oci8 and pdo_oci
 
