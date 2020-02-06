@@ -1,6 +1,6 @@
 FROM webdevops/php-apache:5.6
 
-RUN apt-get update && apt-get install -qqy git unzip \
+RUN apt-get update && apt-get install -qqy git unzip mysql-client \
         libaio1 wget && apt-get clean autoclean && apt-get autoremove --yes &&  rm -rf /var/lib/{apt,dpkg,cache,log}/
 
 # ORACLE oci
@@ -25,3 +25,4 @@ RUN echo 'instantclient,/opt/oracle/instantclient_12_1/' | pecl install oci8-2.0
       && docker-php-ext-enable oci8 \
        && docker-php-ext-configure pdo_oci --with-pdo-oci=instantclient,/opt/oracle/instantclient_12_1,12.1 \
        && docker-php-ext-install pdo_oci
+       
